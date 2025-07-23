@@ -14,7 +14,7 @@ app.use(express.json());
 dotenv.config();
 
 
-// const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4000;
 const URI = process.env.MongoDBURI
 
 //connect MongoDB
@@ -23,8 +23,8 @@ mongoose.connect(URI, {
   useUnifiedTopology: true,
 }).then(() => {
   console.log("✅ MongoDB Connected");
-  app.listen(3000, () => {
-    console.log(`🚀 Server listening on port 3000`);
+  app.listen(PORT, () => {
+    console.log(`🚀 Server listening on port 4000`);
   });
 }).catch((error) => {
   console.error("❌ MongoDB connection error:", error);
